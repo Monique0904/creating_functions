@@ -1,0 +1,128 @@
+#program start
+
+#input section
+	#call drawLeaves
+	#call drawPetals
+	#call drawFlower
+	#set turtle name to momo
+	#set momo speed to 10
+
+#processing section
+	#create function drawFlower with t as it parameter 
+  #pen up
+  #set position to (80,-6) 
+  #turn 90 degrees left
+ 	#pen down
+  #set t color to brown 
+  #fill in the circle with the color brown
+  #turn right 90 degrees
+ 	#set circle size to 13
+  #stop fill 
+	#create function drawPetals with s as its parameter 
+	#set s color to yellow 
+	#pen up
+	#move turtle to position (80,6)
+	#pen down
+	#begin fill
+	#draw semicircle in position (90,70)
+	#end fill
+	#repeat the previous six steps five times 
+	#pen up
+	#move turtle to position (80,6)
+	#pen down
+	#begin fill
+	#draw semicircle in position (-80,70.15)
+	#end fill
+	#repeat the previous six steps five times 
+	#create function drawLeaves with e as its parameter  
+	#set e color to green 
+	#pen up
+	#move turtle to position (80,6)
+	#pen down
+	#begin fill
+	#draw semicircle in position (100,90)
+	#end fill
+	#repeat the previous six steps two times 
+	#pen up
+	#move turtle to position (80,6)
+	#pen down
+	#begin fill
+	#draw semicircle in position (-100,90)
+	#end fill
+	#repeat the previous six steps two times 
+
+#output section
+	#draw four semicircles and fill with green
+	#draw five semicircles and fill with yellow 
+	#draw five smaller semicircles that mirror the other other yellow ones and fill with yellow 
+	#draw a circle and fill with brown 
+	#display "Pentamerous Flower"
+
+#eop
+
+import turtle
+
+def drawFlower(t):
+    t.penup()
+    t.setpos(80,-6) 
+    t.left(90)
+    t.pendown() 
+
+    t.color("brown")
+    t.begin_fill()
+    t.right(90)
+    t.circle(13)
+    t.end_fill()
+	
+def drawPetals(s):
+
+	s.color("yellow")
+	
+	for x in range (5):
+		s.up()
+		s.goto(80,6)
+		s.down()
+		s.begin_fill()
+		s.circle(90,70)
+		s.end_fill()
+		
+	for x in range (5):
+		s.up()
+		s.goto(80,6)
+		s.down()
+		s.begin_fill()
+		s.circle(-80,70.15)
+		s.end_fill()
+		
+def drawLeaves(e):
+
+	e.color("green")
+
+	for y in range (2):
+		e.up()
+		e.goto(80,6)
+		e.down()
+		e.begin_fill()
+		e.circle(100,90)
+		e.end_fill()
+		
+	for y in range (2):
+		e.up()
+		e.goto(80,6)
+		e.down()
+		e.begin_fill()
+		e.circle(-100,90) 
+		e.end_fill()
+		
+def main():
+
+    momo = turtle.Turtle()
+    momo.speed(10)
+	
+	  drawLeaves(momo)
+	  drawPetals(momo)
+    drawFlower(momo)
+	  print("Pentamerous Flower")
+    
+main()
+
